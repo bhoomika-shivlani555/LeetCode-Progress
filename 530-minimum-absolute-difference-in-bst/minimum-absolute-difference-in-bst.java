@@ -21,9 +21,11 @@ class Solution {
         if(root==null)
             return;
         inorder(root.left);
+
         if(prev!=root && prev!=null)
             min=Math.min(root.val-prev.val,min);
         prev=root;
+        
         inorder(root.right);
     }
     public int getMinimumDifference(TreeNode root) {
