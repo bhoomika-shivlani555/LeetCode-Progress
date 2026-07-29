@@ -14,30 +14,6 @@
  * }
  */
 class Solution {
-    // public TreeNode level(TreeNode root)
-    // {
-    //     Queue<TreeNode> q=new LinkedList<>();
-    //     Queue<Integer> l=new LinkedList<>();
-    //     q.offer(root);
-    //     l.offer(1);
-    //     while(!q.isEmpty())
-    //     {
-    //         Node curr=q.poll();
-    //         int currl=l.poll();
-    //         if(curr.left!=null)
-    //         {
-    //             q.offer(curr.left);
-    //             l.offer(currl+1);
-    //         }
-    //         else if(curr.right!=null)
-    //         {
-    //             q.offer(curr.right);
-    //             l.offer(currl+1);
-    //         }
-    //         else
-    //             return currl;    
-    //     }
-    // }
     public int minDepth(TreeNode root) {
         if(root==null)
             return 0;
