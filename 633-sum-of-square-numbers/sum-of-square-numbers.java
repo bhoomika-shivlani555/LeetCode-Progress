@@ -16,11 +16,10 @@ class Solution {
         double l=0, r=(int)Math.sqrt(c);
         while(l<=r)
         {
-            double c1=c;
             double val=l*l+r*r;
-            if(val==c1)
+            if(val==c)
                 return true;
-            if(val>c1)
+            if(val>c)
                 r--;
             else
                 l++;
