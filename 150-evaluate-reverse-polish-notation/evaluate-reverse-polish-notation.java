@@ -13,7 +13,7 @@ class Solution {
             {
                 int c1=s.pop();
                 int ans=s.pop();
-                System.out.print(ans+" "+c+" "+c1+"= ");
+                
                 if(c.equals("*"))
                     ans=ans*c1;
                 if(c.equals("+"))
@@ -22,7 +22,6 @@ class Solution {
                     ans=ans-c1;
                 if(c1!=0 && c.equals("/"))
                     ans=ans/c1;
-                System.out.println(ans);
                 s.push(ans);
             }
         }
