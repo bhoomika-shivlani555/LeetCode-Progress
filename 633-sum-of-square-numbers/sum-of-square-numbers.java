@@ -1,6 +1,6 @@
 class Solution {
     public boolean judgeSquareSum(int c) {
-        if(c==0)
+        /*if(c==0)
             return true;
         HashSet<Integer> set=new HashSet<>();
         for(int x=1;x<=Math.sqrt(c);x++)
@@ -11,6 +11,20 @@ class Solution {
         for(int x:set)
             if(set.contains(c-x) || set.contains(c))
                 return true;
+        return false;*/
+
+        double l=0, r=(int)Math.sqrt(c);
+        while(l<=r)
+        {
+            double c1=c;
+            double val=l*l+r*r;
+            if(val==c1)
+                return true;
+            if(val>c1)
+                r--;
+            else
+                l++;
+        }
         return false;
     }
 }
