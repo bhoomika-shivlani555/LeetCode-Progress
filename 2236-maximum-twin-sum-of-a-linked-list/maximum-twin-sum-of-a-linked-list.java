@@ -13,7 +13,7 @@ class Solution {
         LinkedList<Integer> l=new LinkedList<>();
         ListNode slow=head;
         ListNode fast=head.next;
-        while(fast.next!=null)
+        while(fast.next !=null)
         {
             slow=slow.next;
             fast=fast.next.next;
@@ -32,7 +32,7 @@ class Solution {
         }
         ListNode head2=prev;
         int max=0;
-        while(head!=null && head2!=null)
+        while(head!=null)
         {
             max=Math.max(max,head.val+head2.val);
             head=head.next;
