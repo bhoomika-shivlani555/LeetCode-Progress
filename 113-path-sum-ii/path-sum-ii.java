@@ -29,7 +29,7 @@ class Solution {
         sum(root.left,ans,list,ts-root.val);
         sum(root.right,ans,list,ts-root.val);
 
-        list.subList(size-1, list.size()).clear();
+        list.remove(list.size()-1);
     }
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> ans=new ArrayList<>();
