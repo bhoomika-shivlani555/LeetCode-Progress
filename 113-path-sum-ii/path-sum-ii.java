@@ -20,9 +20,7 @@ class Solution {
             return;
 
         list.add(root.val);
-
-        int size=list.size();
-
+        
         if(root.left==null && root.right==null && ts-root.val==0)
             ans.add(new ArrayList<>(list));
 
