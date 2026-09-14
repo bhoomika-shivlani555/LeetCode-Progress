@@ -39,7 +39,6 @@ class Solution {
         int max=0;
         for(String x:map.keySet())
         {
-            System.out.println(x);
             max=Math.max(max,map.get(x));
         }
         return max;
