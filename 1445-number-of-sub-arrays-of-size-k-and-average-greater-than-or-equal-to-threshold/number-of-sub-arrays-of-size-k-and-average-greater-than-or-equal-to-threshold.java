@@ -6,14 +6,20 @@ class Solution {
         while(r<n)
         {
             sum=sum+arr[r];
-
+            if(r-l+1>k)
+            {
+                sum=sum-arr[l];
+                l++;
+            }
+            
             if(r-l+1==k)
             {
                 if(sum/k>=threshold)
                     count++;
-                sum=sum-arr[l];
-                l++;
+
+                
             }
+
             
             r++;
         }
