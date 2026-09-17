@@ -20,12 +20,6 @@ class Solution {
                 map2.put(c,map2.get(c)+1);
             else
                 map2.put(c,1);
-            
-            // if(!map.containsKey(c))
-            // {
-            //     l=r;
-            //     map2=new HashMap<>();
-            // }
 
             if(r-l+1>p.length())
             {
