@@ -15,13 +15,7 @@ class Solution {
         int n=rooms.size();
         int visited[]=new int[n];
         Arrays.fill(visited,0);
-        for(int x=0;x<n;x++)
-        {
-            if(visited[x]==0)
-            {
-                DFS(0,rooms,visited);
-            }
-        }
+        DFS(0,rooms,visited);
         for(int x=0;x<n;x++)
         {
             if(visited[x]==0)
