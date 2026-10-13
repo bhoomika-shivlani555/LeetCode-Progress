@@ -7,10 +7,8 @@ class Solution {
         
         long sum=0;
         for(int x=0;x<n/2;x++)
-        {
             sum=sum+nums[n-x-1]-nums[x];
-            System.out.println(nums[n-x-1]+" "+nums[x]);
-        }
+           
         if(n%2==1)
             sum=sum+nums[n/2];
         return sum;
