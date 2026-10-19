@@ -6,7 +6,6 @@ class Solution {
             sum+=mat[x][x];
             if(n-1-x!=x)
                 sum+=mat[x][n-1-x];
-            System.out.println(mat[x][x]+" "+mat[n-x-1][n-1-x]);
         }
         return sum;
     }
