@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-    public TreeNode sort(int nums[],int start,int last)
+    public TreeNode create(int nums[],int start, int end)
     {
-        if(start>last)
+        if(start>end)
             return null;
-        int mid=start+(last-start)/2;
+        int mid=start+(end-start)/2;
         TreeNode nn=new TreeNode(nums[mid]);
-        nn.left=sort(nums,start,mid-1);
-        nn.right=sort(nums,mid+1,last);
+        nn.left=create(nums,start,mid-1);
+        nn.right=create(nums,mid+1,end);
         return nn;
     }
     public TreeNode sortedArrayToBST(int[] nums) {
-        return sort(nums,0,nums.length-1);
+        return create(nums,0,nums.length-1);
     }
 }
