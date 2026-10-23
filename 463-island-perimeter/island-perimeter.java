@@ -1,17 +1,38 @@
 class Solution {
-    public int dfs(int [][]grid,int x,int y)
+    public int bfs(int grid[][],int x,int y)
     {
         int row=grid.length;
         int col=grid[0].length;
-
-        if(x<0||y<0||x>=row||y>=col||grid[x][y]==0)
-            return 1;
-        if(grid[x][y]==-1)
-            return 0;
-
+        Queue<int []> q=new LinkedList<>();
+        int directions[][]={{0,1},{0,-1},{1,0},{-1,0}};
+        int peri=0;
+        int a2[]={x,y};
+        q.offer(a2);
         grid[x][y]=-1;
-        return dfs(grid,x+1,y)+dfs(grid,x-1,y)+dfs(grid,x,y+1)+dfs(grid,x,y-1);
 
+        while(!q.isEmpty())
+        {
+            int arr[]=q.poll();
+            for(int i[]:directions)
+            {
+                int a=arr[0]+i[0];
+                int b=arr[1]+i[1];
+
+                if(a<0|| b<0 || a>=row|| b>=col || grid[a][b]==0)
+                    peri++;
+
+                else if(grid[a][b]==-1)
+                    continue;
+                
+                else
+                {
+                    int a1[]={a,b};
+                    q.offer(a1);
+                    grid[a][b]=-1;
+                }
+            }
+        }
+        return peri;
     }
     public int islandPerimeter(int[][] grid) {
         int row=grid.length;
@@ -22,11 +43,9 @@ class Solution {
             for(int y=0;y<col;y++)
             {
                 if(grid[x][y]==1)
-                {
-                    return dfs(grid,x,y);
-                }
+                    return bfs(grid,x,y);
             }
         }
-        return 0;
+        return -1;
     }
 }
