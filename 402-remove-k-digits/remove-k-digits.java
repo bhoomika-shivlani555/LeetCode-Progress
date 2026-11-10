@@ -16,11 +16,12 @@ class Solution {
             s.pop();
             k--;
         }
+
         StringBuilder sb=new StringBuilder();
-        while(!s.isEmpty()) 
-        {
+        if(s.isEmpty())
+            return "0";
+        while(!s.isEmpty())
             sb.insert(0,s.pop());
-        }
         
         while(sb.length()>0 && sb.charAt(0)=='0')
             sb.deleteCharAt(0);
