@@ -1,0 +1,14 @@
+SELECT
+    p.product_id,
+    ROUND(
+        COALESCE(SUM(P.PRICE*U.UNITS) /SUM(U.UNITS), 0),
+        2
+    ) AS average_price
+
+FROM Prices p
+
+LEFT JOIN UnitsSold u
+    ON P.PRODUCT_ID=U.PRODUCT_ID
+    AND U.PURCHASE_DATE BETWEEN START_DATE AND END_DATE
+
+GROUP BY P.PRODUCT_ID;
